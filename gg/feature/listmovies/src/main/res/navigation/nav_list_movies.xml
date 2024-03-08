@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_list_movies"
+    app:startDestination="@id/listMoviesFragment">
+    <fragment
+        android:id="@+id/listMoviesFragment"
+        android:name="com.rachellima.movies.view.ListMoviesFragment"
+        android:label="ListMoviesFragment"
+        tools:layout="@layout/fragment_list_movies" />
+</navigation>
