@@ -40,19 +40,23 @@ android {
 }
 
 dependencies {
-    implementation(project(":gg:core:models"))
-    implementation(project(":gg:core:network"))
-    implementation(project(":gg:feature:listmovies"))
-    implementation(project(":gg:data:movies"))
+    implementation(project(Modules.ggCoreModels))
+    implementation(project(Modules.ggCoreNetwork))
+    implementation(project(Modules.ggFeatureListMovies))
+    implementation(project(Modules.ggCoreRepository))
 
-    implementation(AppDependencies.appLibraries)
-    implementation(Koin.koinAndroid)
-    implementation(Koin.koinCore)
-    implementation(Nav.navigationRuntimeKtx)
-    implementation(Nav.navigationUiKtx)
-    implementation(Nav.navigationFragment)
+    implementation(Deps.kotlinStdLib)
+    implementation(Deps.coreKtx)
+    implementation(Deps.appcompat)
+    implementation(Deps.constraintLayout)
+    implementation(Deps.material)
+    implementation(Deps.koinAndroid)
+    implementation(Deps.koinCore)
+    implementation(Deps.navigationRuntimeKtx)
+    implementation(Deps.navigationUiKtx)
+    implementation(Deps.navigationFragment)
 
-    //test libs
-    testImplementation(AppDependencies.junit)
-    androidTestImplementation(AppDependencies.androidTestLibraries)
+    testImplementation(Deps.junit)
+    androidTestImplementation(Deps.extJUnit)
+    androidTestImplementation(Deps.espressoCore)
 }

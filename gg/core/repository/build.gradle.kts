@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rachellima.data.movies"
+    namespace = "com.rachellima.repository"
     compileSdk = AppConfig.compileSdk
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -16,17 +16,17 @@ android {
 }
 
 dependencies {
-    implementation(project(":gg:core:network"))
-    implementation(project(":gg:core:models"))
+    implementation(project(Modules.ggCoreModels))
+    implementation(project(Modules.ggCoreNetwork))
 
     implementation(Deps.coreKtx)
     implementation(Deps.constraintLayout)
-    implementation(Koin.koinAndroid)
-    implementation(Koin.koinCore)
-    implementation(Coroutines.coroutinesCore)
-    implementation(Coroutines.coroutines)
-    implementation(Retrofit.retrofitLib)
-    implementation(Retrofit.retrofitConverter)
+    implementation(Deps.koinAndroid)
+    implementation(Deps.koinCore)
+    implementation(Deps.coroutinesCore)
+    implementation(Deps.coroutines)
+    implementation(Deps.retrofitLib)
+    implementation(Deps.retrofitConverter)
 
     testImplementation(Deps.junit)
 

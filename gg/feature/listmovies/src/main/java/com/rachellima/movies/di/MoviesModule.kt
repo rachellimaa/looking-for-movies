@@ -5,7 +5,7 @@ import kotlinx.coroutines.Dispatchers
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val moviesModule = module {
+val listMoviesModule = module {
     viewModel { ListMoviesViewModel(get(), get()) }
     factory { Dispatchers.IO }
 }

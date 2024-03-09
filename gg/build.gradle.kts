@@ -33,14 +33,17 @@ android {
 }
 
 dependencies {
-
-    implementation(AppDependencies.appLibraries)
-    implementation(Koin.koinAndroid)
-    implementation(Koin.koinCore)
-    implementation(Nav.navigationRuntimeKtx)
-    implementation(Nav.navigationUiKtx)
-    implementation(Nav.navigationFragment)
-
-    testImplementation(AppDependencies.junit)
-    androidTestImplementation(AppDependencies.androidTestLibraries)
+    implementation(Deps.kotlinStdLib)
+    implementation(Deps.coreKtx)
+    implementation(Deps.appcompat)
+    implementation(Deps.constraintLayout)
+    implementation(Deps.material)
+    implementation(Deps.koinAndroid)
+    implementation(Deps.koinCore)
+    implementation(Deps.navigationRuntimeKtx)
+    implementation(Deps.navigationUiKtx)
+    implementation(Deps.navigationFragment)
+    testImplementation(Deps.junit)
+    androidTestImplementation(Deps.extJUnit)
+    androidTestImplementation(Deps.espressoCore)
 }

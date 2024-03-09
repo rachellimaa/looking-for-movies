@@ -21,19 +21,19 @@ android {
 }
 
 dependencies {
-    implementation(project(":gg:data:movies"))
-    implementation(project(":gg:core:models"))
-    implementation(project(":gg:core:network"))
+    implementation(project(Modules.ggCoreModels))
+    implementation(project(Modules.ggCoreNetwork))
+    implementation(project(Modules.ggCoreRepository))
 
     implementation(Deps.appcompat)
     implementation(Deps.coreKtx)
     implementation(Deps.constraintLayout)
     implementation(Deps.material)
-    implementation(Nav.navigationRuntimeKtx)
-    implementation(Nav.navigationUiKtx)
-    implementation(Nav.navigationFragment)
-    implementation(Koin.koinCore)
-    implementation(Koin.koinAndroid)
+    implementation(Deps.navigationRuntimeKtx)
+    implementation(Deps.navigationUiKtx)
+    implementation(Deps.navigationFragment)
+    implementation(Deps.koinCore)
+    implementation(Deps.koinAndroid)
     implementation(Deps.coil)
 
     //test libs

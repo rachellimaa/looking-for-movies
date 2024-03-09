@@ -17,23 +17,21 @@ android {
 }
 
 dependencies {
-    implementation(project(":gg:core:models"))
+    implementation(project(Modules.ggCoreModels))
 
     implementation(Deps.appcompat)
     implementation(Deps.coreKtx)
     implementation(Deps.constraintLayout)
     implementation(Deps.material)
 
-    implementation(Retrofit.retrofitLib)
-    implementation(Retrofit.retrofitConverter)
-    implementation(Retrofit.okHttp)
-    implementation(Retrofit.interceptor)
-    implementation(Koin.koinAndroid)
-    implementation(Koin.koinCore)
+    implementation(Deps.retrofitLib)
+    implementation(Deps.retrofitConverter)
+    implementation(Deps.okHttp)
+    implementation(Deps.interceptor)
+    implementation(Deps.koinAndroid)
+    implementation(Deps.koinCore)
 
-    //test libs
     testImplementation(Deps.junit)
-
     androidTestImplementation(Deps.espressoCore)
     androidTestImplementation(Deps.extJUnit)
 }

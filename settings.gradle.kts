@@ -14,8 +14,10 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "LookingForMovies"
-include(":gg:app")
-include(":gg:core:models")
-include(":gg:data:movies")
-include(":gg:feature:listmovies")
-include(":gg:core:network")
+include(
+    ":gg:app",
+    ":gg:core:models",
+    ":gg:core:repository",
+    ":gg:feature:listmovies",
+    ":gg:core:network"
+)
