@@ -19,6 +19,7 @@
                 style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginStart="16dp"
                 android:text="@string/title_view_list_movies"
                 android:textSize="20sp"

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -32,9 +33,8 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getAllMovies("Batman")
-      //  setupSearchView()
-
+        setupSearchView()
+        setupListeners()
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { state ->
@@ -59,7 +59,7 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
     private fun setupSearchView() {
         binding.searchMoviesSearchView.apply {
             setOnQueryTextListener(createSearchViewChangeListener())
-            setQuery(viewModel.getLastSearchedTerm(), false)
+            setQuery("", false)
         }
     }
 
@@ -71,13 +71,27 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
         }
     }
 
-    private fun onSearchTextChange(text: String) {
-        viewModel.filteredQuery = text
-        saveSearchedItems(items = viewModel.searchProductByText(text))
+    private fun setupListeners() {
+        with(binding.searchMoviesSearchView) {
+            try {
+                val id = context.resources.getIdentifier(
+                    "android:id/search_close_btn",
+                    null, null
+                )
+                val close = findViewById<ImageView>(id)
+                close.setOnClickListener {
+                    setQuery("", false)
+                    clearFocus()
+                }
+                true
+            } catch (e: Exception) {
+                false
+            }
+        }
     }
 
-    private fun saveSearchedItems(items: List<Search>) {
-        viewModel.saveSearchedItems(items)
+    private fun onSearchTextChange(text: String) {
+        viewModel.searchProductByText(text)
     }
 
     override fun onDestroyView() {
