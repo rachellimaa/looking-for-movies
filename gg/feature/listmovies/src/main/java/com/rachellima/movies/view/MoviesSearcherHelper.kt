@@ -26,9 +26,9 @@ class MoviesSearcherHelper {
         }
 
         return products.filter {
-            it.Title.contains(text, ignoreCase = true) ||
+            it.titleItem.contains(text, ignoreCase = true) ||
                     it.imdbID.contains(text, ignoreCase = true) ||
-                    it.Year.contains(text, ignoreCase = true)
+                    it.yearItem.contains(text, ignoreCase = true)
         }
     }
 

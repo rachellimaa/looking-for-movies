@@ -35,9 +35,9 @@ class MoviesAdapter(
     inner class MoviesCatalogHolder(private val binding: MoviesCatalogItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind (item: Search) = with(binding) {
             val context = binding.root.context
-            titleItem.text = context.getString(R.string.id_title_movies_catalog_item, item.imdbID, item.Title).parseAsHtml()
-            subtitleItem.text = context.getString(R.string.type_year_movies_catalog_item, item.Type, item.Year).parseAsHtml()
-            imgItem.load(item.Poster){
+            titleItem.text = context.getString(R.string.id_title_movies_catalog_item, item.imdbID, item.titleItem).parseAsHtml()
+            subtitleItem.text = context.getString(R.string.type_year_movies_catalog_item, item.typeItem, item.yearItem).parseAsHtml()
+            imgItem.load(item.urlPoster){
                 crossfade(true)
                 placeholder(R.drawable.baseline_image_search_24)
             }
