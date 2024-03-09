@@ -57,6 +57,7 @@ dependencies {
     implementation(Deps.navigationFragment)
 
     testImplementation(Deps.junit)
+    testImplementation(Deps.koinTest)
     androidTestImplementation(Deps.extJUnit)
     androidTestImplementation(Deps.espressoCore)
 }

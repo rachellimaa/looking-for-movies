@@ -14,17 +14,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/titleView"
-                style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="16dp"
-                android:text="@string/title_view_list_movies"
-                android:textSize="20sp"
+            <com.rachellima.uicomponents.CustomHeader
+                android:id="@+id/customHeader"
+                android:layout_width="match_parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:header_title="@string/title_view_list_movies"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="wrap_content"/>
 
             <androidx.appcompat.widget.SearchView
                 style="@style/Widget.AppCompat.SearchView"
@@ -37,7 +34,7 @@
                 android:hint="@string/title_search_view_list_movies"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/titleView" />
+                app:layout_constraintTop_toBottomOf="@+id/customHeader" />
 
             <TextView
                 android:id="@+id/moviesCount"

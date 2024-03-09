@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rachellima.models"
+    namespace = "com.rachellima.uicomponents"
     compileSdk = AppConfig.compileSdk
 
     compileOptions {
@@ -14,10 +14,17 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
-    implementation(Deps.retrofitConverter)
+    implementation(Deps.appcompat)
+    implementation(Deps.coreKtx)
+    implementation(Deps.constraintLayout)
+    implementation(Deps.material)
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.junit)
     androidTestImplementation(Deps.espressoCore)

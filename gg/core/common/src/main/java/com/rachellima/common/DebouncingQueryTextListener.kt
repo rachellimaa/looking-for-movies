@@ -1,4 +1,4 @@
-package com.rachellima.movies.view
+package com.rachellima.common
 
 import android.os.Handler
 import android.os.Looper

@@ -1,10 +1,8 @@
 package com.rachellima.movies.adapter
 
-import android.text.Html
-import android.text.Spanned
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.text.HtmlCompat
+import androidx.core.text.parseAsHtml
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.rachellima.listmovies.R
@@ -43,10 +41,4 @@ class MoviesAdapter(
             }
         }
     }
-
-     private fun String.parseAsHtml(
-        flags: Int = HtmlCompat.FROM_HTML_MODE_LEGACY,
-        imageGetter: Html.ImageGetter? = null,
-        tagHandler: Html.TagHandler? = null
-    ): Spanned = HtmlCompat.fromHtml(this, flags, imageGetter, tagHandler)
 }

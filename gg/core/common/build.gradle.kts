@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rachellima.models"
+    namespace = "com.rachellima.common"
     compileSdk = AppConfig.compileSdk
 
     compileOptions {
@@ -17,7 +17,7 @@ android {
 }
 
 dependencies {
-    implementation(Deps.retrofitConverter)
+    implementation(Deps.appcompat)
     testImplementation(Deps.junit)
     androidTestImplementation(Deps.junit)
     androidTestImplementation(Deps.espressoCore)

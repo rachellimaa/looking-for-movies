@@ -19,5 +19,7 @@ include(
     ":gg:core:models",
     ":gg:core:repository",
     ":gg:feature:listmovies",
-    ":gg:core:network"
+    ":gg:core:network",
+    ":gg:core:common",
+    ":gg:core:uicomponents"
 )

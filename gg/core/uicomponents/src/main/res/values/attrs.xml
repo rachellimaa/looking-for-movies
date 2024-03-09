@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomHeader">
+        <attr name="header_src" format="reference" />
+        <attr name="header_title" format="string|reference" />
+    </declare-styleable>
+</resources>

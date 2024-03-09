@@ -1,4 +1,4 @@
-package com.rachellima.weatherforecast
+package com.rachellima.lookingmovies
 
 import org.junit.Test
 

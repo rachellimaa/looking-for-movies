@@ -20,11 +20,14 @@ object Deps {
     const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutinesVersion}"
     const val coroutinesCore = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutinesVersion}"
+    const val koinTest = "io.insert-koin:koin-test-junit4:${Versions.koin}"
 }
 
 object Modules {
     const val ggCoreModels = ":gg:core:models"
     const val ggCoreNetwork = ":gg:core:network"
+    const val ggCoreCommon = ":gg:core:common"
+    const val ggCoreUiComponent = ":gg:core:uicomponents"
     const val ggCoreRepository = ":gg:core:repository"
     const val ggFeatureListMovies = ":gg:feature:listmovies"
 }

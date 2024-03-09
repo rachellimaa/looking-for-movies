@@ -24,6 +24,8 @@ dependencies {
     implementation(project(Modules.ggCoreModels))
     implementation(project(Modules.ggCoreNetwork))
     implementation(project(Modules.ggCoreRepository))
+    implementation(project(Modules.ggCoreCommon))
+    implementation(project(Modules.ggCoreUiComponent))
 
     implementation(Deps.appcompat)
     implementation(Deps.coreKtx)

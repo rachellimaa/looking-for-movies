@@ -10,6 +10,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.rachellima.common.DebouncingQueryTextListener
 import com.rachellima.listmovies.R
 import com.rachellima.listmovies.databinding.FragmentListMoviesBinding
 import com.rachellima.models.Search
