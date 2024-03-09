@@ -19,8 +19,6 @@ dependencies {
     implementation(project(Modules.ggCoreModels))
     implementation(project(Modules.ggCoreNetwork))
 
-    implementation(Deps.coreKtx)
-    implementation(Deps.constraintLayout)
     implementation(Deps.koinAndroid)
     implementation(Deps.koinCore)
     implementation(Deps.coroutinesCore)

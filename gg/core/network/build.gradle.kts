@@ -19,11 +19,6 @@ android {
 dependencies {
     implementation(project(Modules.ggCoreModels))
 
-    implementation(Deps.appcompat)
-    implementation(Deps.coreKtx)
-    implementation(Deps.constraintLayout)
-    implementation(Deps.material)
-
     implementation(Deps.retrofitLib)
     implementation(Deps.retrofitConverter)
     implementation(Deps.okHttp)

@@ -17,12 +17,5 @@ android {
 }
 
 dependencies {
-    implementation(Deps.appcompat)
-    implementation(Deps.coreKtx)
-    implementation(Deps.constraintLayout)
-    implementation(Deps.material)
-    testImplementation(Deps.junit)
     implementation(Deps.retrofitConverter)
-    androidTestImplementation(Deps.espressoCore)
-    androidTestImplementation(Deps.extJUnit)
 }
