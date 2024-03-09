@@ -18,8 +18,8 @@ object Versions {
     const val retrofit = "2.9.0"
     const val okHttp = "4.12.0"
     const val coroutinesVersion = "1.5.1"
-    const val archNavigation = "2.7.7"
-    const val fragmentKtx = "1.3.1"
+    const val archNavigation = "2.3.4"
+    const val coil = "1.3.2"
 }
 
 object Deps{
@@ -33,6 +33,8 @@ object Deps{
     const val junit = "junit:junit:${Versions.junit}"
     const val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
     const val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
+
+    const val coil = "io.coil-kt:coil:${Versions.coil}"
 }
 
 object Koin {

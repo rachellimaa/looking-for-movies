@@ -34,6 +34,8 @@ dependencies {
     implementation(Nav.navigationFragment)
     implementation(Koin.koinCore)
     implementation(Koin.koinAndroid)
+    implementation(Deps.coil)
+
     //test libs
     testImplementation(Deps.junit)
 

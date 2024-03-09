@@ -1,9 +1,9 @@
 package com.rachellima.movies.viewmodel
 
-import com.rachellima.network.model.OmdbResponse
+import com.rachellima.models.Search
 
 data class ListMoviesState(
     var loading: Boolean = false,
-    val weather: OmdbResponse? = null,
+    val searchList: List<Search>? = null,
     val error: Boolean = false
 )

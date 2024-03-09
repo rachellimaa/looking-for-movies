@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_view_list_movies">Looking for Fun</string>
+    <string name="title_search_view_list_movies">Search</string>
+    <string name="type_year_movies_catalog_item">
+        <![CDATA[<b>Type:</b>]]> %s • <![CDATA[<b>Year:</b>]]> %s
+    </string>
+    <string name="id_title_movies_catalog_item">
+        <![CDATA[<b>imdbID:</b>]]> %s - <![CDATA[<b>Title:</b>]]> %s
+    </string>
+</resources>

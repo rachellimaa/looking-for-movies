@@ -15,8 +15,6 @@ object AppDependencies {
     private val extJUnit = "androidx.test.ext:junit:${Versions.extJunit}"
     private val espressoCore = "androidx.test.espresso:espresso-core:${Versions.espresso}"
 
-    const val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.fragmentKtx}"
-
     val junit = "junit:junit:${Versions.junit}"
 
 
@@ -33,15 +31,6 @@ object AppDependencies {
         add(espressoCore)
     }
 
-}
-
-
-
-//util functions for adding the different type dependencies from build.gradle.kts file
-fun DependencyHandler.kapt(list: List<String>) {
-    list.forEach { dependency ->
-        add("kapt", dependency)
-    }
 }
 
 fun DependencyHandler.implementation(list: List<String>) {

@@ -25,6 +25,8 @@ dependencies {
     implementation(Koin.koinCore)
     implementation(Coroutines.coroutinesCore)
     implementation(Coroutines.coroutines)
+    implementation(Retrofit.retrofitLib)
+    implementation(Retrofit.retrofitConverter)
 
     testImplementation(Deps.junit)
 
