@@ -64,6 +64,17 @@
                 tools:itemCount="5"
                 tools:listitem="@layout/movies_catalog_item" />
 
+            <ProgressBar
+                android:id="@+id/loadingProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/moviesListRecyclerView"
+                app:layout_constraintEnd_toEndOf="@id/moviesListRecyclerView"
+                app:layout_constraintStart_toStartOf="@id/moviesListRecyclerView"
+                app:layout_constraintTop_toTopOf="@id/moviesListRecyclerView" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>

@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -39,9 +40,14 @@ class FavoriteListFragment : Fragment(R.layout.fragment_favorite_list) {
                         setupList(it)
                         configNumberOfProducts(it.size)
                     }
+                    configureLoading(state.loading)
                 }
             }
         }
+    }
+
+    private fun configureLoading(loading: Boolean) {
+        binding.loadingProgressBar.isVisible = loading
     }
 
     private fun configNumberOfProducts(size: Int) {

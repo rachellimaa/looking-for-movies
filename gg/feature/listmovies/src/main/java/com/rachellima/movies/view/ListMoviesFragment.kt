@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
@@ -43,9 +44,14 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
                         setupList(it)
                         configNumberOfProducts(it.size)
                     }
+                    configureLoading(state.loading)
                 }
             }
         }
+    }
+
+    private fun configureLoading(loading: Boolean) {
+        binding.loadingProgressBar.isVisible = loading
     }
 
     private fun configNumberOfProducts(size: Int) {

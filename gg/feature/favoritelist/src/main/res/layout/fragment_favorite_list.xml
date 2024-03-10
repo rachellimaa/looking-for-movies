@@ -48,6 +48,17 @@
                 tools:itemCount="5"
                 tools:listitem="@layout/favorite_list_item" />
 
+            <ProgressBar
+                android:id="@+id/loadingProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@id/favoriteListRecyclerView"
+                app:layout_constraintEnd_toEndOf="@id/favoriteListRecyclerView"
+                app:layout_constraintStart_toStartOf="@id/favoriteListRecyclerView"
+                app:layout_constraintTop_toTopOf="@id/favoriteListRecyclerView" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.core.widget.NestedScrollView>
