@@ -8,9 +8,5 @@
         android:id="@+id/listMoviesFragment"
         android:name="com.rachellima.movies.view.ListMoviesFragment"
         android:label="ListMoviesFragment"
-        tools:layout="@layout/fragment_list_movies">
-        <action
-            android:id="@+id/listMoviesToFavorites"
-            app:destination="@+id/nav_favorite_list" />
-    </fragment>
+        tools:layout="@layout/fragment_list_movies" />
 </navigation>

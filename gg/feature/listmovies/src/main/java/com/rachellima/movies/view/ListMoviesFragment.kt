@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rachellima.common.DebouncingQueryTextListener
 import com.rachellima.listmovies.R
@@ -46,11 +45,6 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
                     }
                 }
             }
-        }
-        binding.goToFavoriteList.setOnClickListener {
-            findNavController().navigate(
-                R.id.listMoviesToFavorites
-            )
         }
     }
 
