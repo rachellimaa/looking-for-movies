@@ -20,5 +20,7 @@ object Versions {
     const val coroutinesVersion = "1.5.1"
     const val archNavigation = "2.3.4"
     const val coil = "1.3.2"
+
+    const val room = "2.5.0"
 }
 
