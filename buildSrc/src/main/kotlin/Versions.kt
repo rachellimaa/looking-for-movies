@@ -22,5 +22,6 @@ object Versions {
     const val coil = "1.3.2"
 
     const val room = "2.5.0"
+    const val mockk = "1.12.0"
 }
 

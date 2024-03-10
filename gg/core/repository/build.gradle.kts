@@ -28,6 +28,7 @@ dependencies {
     implementation(Deps.retrofitConverter)
 
     testImplementation(Deps.junit)
+    testImplementation(Deps.mockk)
 
     androidTestImplementation(Deps.espressoCore)
     androidTestImplementation(Deps.extJUnit)
