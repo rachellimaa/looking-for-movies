@@ -11,12 +11,12 @@ E possui os seguintes módulos:<br>
 ![rachel-Página-3 drawio (2)](https://github.com/rachellimaa/looking-for-movies/assets/11683116/75ca5d09-fb4d-4338-bd33-5a11f5ea4306) 
 
 <h1>Observações</h1>
-O aplicativo tem uma interface visual simples, mas com uma arquitetura bastante completa, utilizando View Binding, Navigation, injeção de dependencias com Koin
-Alguns testes unitários foram implementados nos módulos.
+O aplicativo tem uma interface visual simples, mas com uma arquitetura bastante completa, utilizando View Binding, Navigation, injeção de dependencias com Koin<br>
+Alguns testes unitários foram implementados nos módulos.<br>
 Um GitHub action foi configurado para buildar o projeto e gerar a apk<br>
 
 <h1>Melhorias</h1> 
-A interface com usuário pode ser melhorada
-Adição de novas funcionalidades, como adição de filtros e adição da IA Gemini para buscar em que streamings esses filmes estão e demais dúvidas dos usuários.   
-Adição de assinatura na apk 
+A interface com usuário pode ser melhorada<br>
+Adição de novas funcionalidades, como adição de filtros e adição da IA Gemini para buscar em que streamings esses filmes estão e demais dúvidas dos usuários.<br>  
+Adição de assinatura na apk <br>
 Publicar na loja da play store
