@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rachellima.models.Search
+import com.rachellima.movies.repository.local.FavoritesRepository
 import com.rachellima.movies.repository.remote.OmdbRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
@@ -15,7 +16,8 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class ListMoviesViewModel(
-    private val repository: OmdbRepository,
+    private val repositoryOmdb: OmdbRepository,
+    private val repositoryFavorites: FavoritesRepository,
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
     private var _uiState = MutableStateFlow(ListMoviesState())
@@ -29,7 +31,7 @@ class ListMoviesViewModel(
     private fun getAllMovies(title: String) {
         showLoadingState()
         viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
-            val omdbData = repository.getAllOmdbResponse(title)
+            val omdbData = repositoryOmdb.getAllOmdbResponse(title)
             withContext(Dispatchers.Main) {
                 if (omdbData != null) {
                     onLoadedMoviesWithSuccess(omdbData.searchList)
@@ -52,6 +54,10 @@ class ListMoviesViewModel(
 
     private fun onError() {
         _uiState.value = _uiState.value.copy(loading = false, error = true)
+    }
+
+    fun savedItems(search: Search) {
+        repositoryFavorites.saveFavorites(search)
     }
 
 }

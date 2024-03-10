@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rachellima.common.DebouncingQueryTextListener
 import com.rachellima.listmovies.R
@@ -36,7 +37,6 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
         super.onViewCreated(view, savedInstanceState)
         setupSearchView()
         setupListenersSearchView()
-        setupClickFavoriteButton()
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { state ->
@@ -47,10 +47,11 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
                 }
             }
         }
-    }
-
-    private fun setupClickFavoriteButton() {
-
+        binding.goToFavoriteList.setOnClickListener {
+            findNavController().navigate(
+                R.id.listMoviesToFavorites
+            )
+        }
     }
 
     private fun configNumberOfProducts(size: Int) {
@@ -64,10 +65,15 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
                 layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                 adapter = MoviesAdapter(
-                    searchList
+                    searchList,
+                    ::savedSearchItem
                 )
             }
         }
+    }
+
+    private fun savedSearchItem(search: Search) {
+        viewModel.savedItems(search)
     }
 
     private fun setupSearchView() {

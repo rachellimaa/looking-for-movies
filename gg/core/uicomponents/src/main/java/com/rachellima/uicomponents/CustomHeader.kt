@@ -28,7 +28,7 @@ class CustomHeader(
         }
     }
 
-    fun setImageDefault() {
+    private fun setImageDefault() {
         binding.customImageHeader.setImageResource(
             if (headerSrc != IMAGE_DEFAULT) headerSrc else R.drawable.ic_action_laugh
         )

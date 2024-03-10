@@ -1,5 +1,6 @@
 package com.rachellima.lookingmovies.di
 
+import com.rachellima.favoritelist.di.favoriteListModule
 import com.rachellima.movies.di.listMoviesModule
 import com.rachellima.network.di.networkModule
 import com.rachellima.movies.di.repositoryMovieModule
@@ -9,6 +10,7 @@ val appModule = module {
     includes(
         repositoryMovieModule,
         networkModule,
-        listMoviesModule
+        listMoviesModule,
+        favoriteListModule
     )
 }

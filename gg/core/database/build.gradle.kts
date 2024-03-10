@@ -18,8 +18,11 @@ android {
 }
 
 dependencies {
+    implementation(project(Modules.ggCoreModels))
     implementation(Deps.retrofitConverter)
     implementation(Deps.roomKtx)
+    implementation(Deps.coroutines)
+    implementation(Deps.coroutinesCore)
     api(Deps.roomRuntime)
     annotationProcessor(Deps.roomCompiler)
     kapt(Deps.roomCompiler)

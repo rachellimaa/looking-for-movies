@@ -4,7 +4,7 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rachellima.models.Search
-import com.rachellima.movies.repository.remote.OmdbRepository
+import com.rachellima.movies.repository.local.FavoritesRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class FavoritesListViewModel(
-    private val repository: OmdbRepository,
+    private val repositoryFavorites: FavoritesRepository,
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
     private var _uiState = MutableStateFlow(FavoritesListState())
@@ -26,20 +26,18 @@ class FavoritesListViewModel(
         onError()
     }
 
-    private fun getAllMovies(title: String) {
-        showLoadingState()
-        viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
-            val omdbData = repository.getAllOmdbResponse(title)
-            withContext(Dispatchers.Main) {
-                if (omdbData != null) {
-                    onLoadedMoviesWithSuccess(omdbData.searchList)
-                }
-            }
-        }
+    init {
+        getAllFavoriteList()
     }
 
-    fun searchProductByText(text: String) {
-        getAllMovies(text)
+    private fun getAllFavoriteList() {
+        showLoadingState()
+        viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
+            val favoritesList = repositoryFavorites.getFavoritesSaved()
+            withContext(Dispatchers.Main) {
+                onLoadedMoviesWithSuccess(favoritesList)
+            }
+        }
     }
 
     private fun showLoadingState() {

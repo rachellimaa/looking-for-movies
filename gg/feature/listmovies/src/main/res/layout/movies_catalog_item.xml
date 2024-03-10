@@ -6,14 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/favoriteIcon"
+        android:id="@+id/favoriteButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:clickable="true"
+        android:focusable="true"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@android:drawable/btn_star_big_on" />
+        app:srcCompat="@drawable/image_favorite_button" />
 
     <TextView
         android:id="@+id/titleItem"
@@ -27,7 +29,7 @@
         android:layout_marginHorizontal="16dp"
         app:layout_constraintEnd_toStartOf="@id/imgItem"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/favoriteIcon" />
+        app:layout_constraintTop_toBottomOf="@id/favoriteButton" />
 
     <TextView
         android:id="@+id/subtitleItem"

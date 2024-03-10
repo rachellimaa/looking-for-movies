@@ -10,7 +10,8 @@ import com.rachellima.listmovies.databinding.MoviesCatalogItemBinding
 import com.rachellima.models.Search
 
 class MoviesAdapter(
-    private val searchList: List<Search>
+    private val searchList: List<Search>,
+    private val onItemClickedValue: (Search) -> Unit,
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MoviesCatalogHolder(
@@ -39,6 +40,10 @@ class MoviesAdapter(
                 crossfade(true)
                 placeholder(R.drawable.baseline_image_search_24)
                 error(R.drawable.baseline_image_search_24)
+            }
+            favoriteButton.setOnClickListener{
+                favoriteButton.isSelected = !favoriteButton.isSelected
+                onItemClickedValue(item)
             }
         }
     }

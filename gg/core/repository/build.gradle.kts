@@ -18,6 +18,7 @@ android {
 dependencies {
     implementation(project(Modules.ggCoreModels))
     implementation(project(Modules.ggCoreNetwork))
+    implementation(project(Modules.ggCoreDatabase))
 
     implementation(Deps.koinAndroid)
     implementation(Deps.koinCore)

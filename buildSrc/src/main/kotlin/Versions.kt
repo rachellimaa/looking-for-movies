@@ -17,7 +17,7 @@ object Versions {
     const val koin = "3.5.0"
     const val retrofit = "2.9.0"
     const val okHttp = "4.12.0"
-    const val coroutinesVersion = "1.5.1"
+    const val coroutinesVersion = "1.5.2"
     const val archNavigation = "2.3.4"
     const val coil = "1.3.2"
 
