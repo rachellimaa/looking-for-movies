@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_favorite_list"
+    app:startDestination="@id/favoriteListFragment">
+    <fragment
+        android:id="@+id/favoriteListFragment"
+        android:name="com.rachellima.favoritelist.view.FavoriteListFragment"
+        android:label="FavoriteListFragment"
+        tools:layout="@layout/fragment_favorite_list" />
+</navigation>

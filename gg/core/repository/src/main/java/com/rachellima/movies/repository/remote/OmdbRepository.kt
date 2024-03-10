@@ -1,4 +1,4 @@
-package com.rachellima.movies.repository
+package com.rachellima.movies.repository.remote
 
 import com.rachellima.network.model.OmdbResponse
 

@@ -35,19 +35,32 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupSearchView()
-        setupListeners()
+        setupListenersSearchView()
+        setupClickFavoriteButton()
         viewLifecycleOwner.lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
                 viewModel.uiState.collect { state ->
-                    state.searchList?.let { setupList(it) }
+                    state.searchList?.let {
+                        setupList(it)
+                        configNumberOfProducts(it.size)
+                    }
                 }
             }
         }
     }
 
+    private fun setupClickFavoriteButton() {
+
+    }
+
+    private fun configNumberOfProducts(size: Int) {
+        binding.moviesCount.text =
+            requireContext().getString(R.string.quantity_items, size.toString())
+    }
+
     private fun setupList(searchList: List<Search>) {
         with(binding) {
-            catalogRecyclerView.apply {
+            moviesListRecyclerView.apply {
                 layoutManager =
                     LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
                 adapter = MoviesAdapter(
@@ -72,7 +85,7 @@ class ListMoviesFragment : Fragment(R.layout.fragment_list_movies) {
         }
     }
 
-    private fun setupListeners() {
+    private fun setupListenersSearchView() {
         with(binding.searchMoviesSearchView) {
             try {
                 val id = context.resources.getIdentifier(

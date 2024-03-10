@@ -46,6 +46,7 @@ dependencies {
     implementation(project(Modules.ggFeatureListMovies))
     implementation(project(Modules.ggCoreRepository))
     implementation(project(Modules.ggCoreDatabase))
+    implementation(project(Modules.ggFeatureFavoriteList))
 
     implementation(Deps.kotlinStdLib)
     implementation(Deps.coreKtx)

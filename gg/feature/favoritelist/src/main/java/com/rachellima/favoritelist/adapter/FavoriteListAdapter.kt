@@ -1,20 +1,20 @@
-package com.rachellima.movies.adapter
+package com.rachellima.favoritelist.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.text.parseAsHtml
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import com.rachellima.listmovies.R
-import com.rachellima.listmovies.databinding.MoviesCatalogItemBinding
+import com.rachellima.favoritelist.R
+import com.rachellima.favoritelist.databinding.FavoriteListItemBinding
 import com.rachellima.models.Search
 
-class MoviesAdapter(
+class FavoriteListAdapter(
     private val searchList: List<Search>
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return MoviesCatalogHolder(
-            MoviesCatalogItemBinding.inflate(
+            FavoriteListItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -30,7 +30,7 @@ class MoviesAdapter(
         }
     }
 
-    inner class MoviesCatalogHolder(private val binding: MoviesCatalogItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class MoviesCatalogHolder(private val binding: FavoriteListItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind (item: Search) = with(binding) {
             val context = binding.root.context
             titleItem.text = context.getString(R.string.id_title_movies_catalog_item, item.imdbID, item.titleItem).parseAsHtml()

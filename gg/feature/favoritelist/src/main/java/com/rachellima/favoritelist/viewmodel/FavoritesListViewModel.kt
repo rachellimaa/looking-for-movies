@@ -1,4 +1,4 @@
-package com.rachellima.movies.viewmodel
+package com.rachellima.favoritelist.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -14,15 +14,15 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class ListMoviesViewModel(
+class FavoritesListViewModel(
     private val repository: OmdbRepository,
     private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
-    private var _uiState = MutableStateFlow(ListMoviesState())
-    val uiState: StateFlow<ListMoviesState> = _uiState.asStateFlow()
+    private var _uiState = MutableStateFlow(FavoritesListState())
+    val uiState: StateFlow<FavoritesListState> = _uiState.asStateFlow()
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
-        Log.e(ListMoviesViewModel::class.java.name, throwable.message ?: "")
+        Log.e(FavoritesListViewModel::class.java.name, throwable.message ?: "")
         onError()
     }
 

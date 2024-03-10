@@ -34,4 +34,5 @@ object Modules {
     const val ggCoreUiComponent = ":gg:core:uicomponents"
     const val ggCoreRepository = ":gg:core:repository"
     const val ggFeatureListMovies = ":gg:feature:listmovies"
+    const val ggFeatureFavoriteList = ":gg:feature:favoritelist"
 }
