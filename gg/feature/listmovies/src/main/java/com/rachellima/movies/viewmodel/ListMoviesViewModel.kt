@@ -28,7 +28,7 @@ class ListMoviesViewModel(
         onError()
     }
 
-    private fun getAllMovies(title: String) {
+    fun getAllMovies(title: String) {
         showLoadingState()
         viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
             val omdbData = repositoryOmdb.getAllOmdbResponse(title)
@@ -44,7 +44,7 @@ class ListMoviesViewModel(
         getAllMovies(text)
     }
 
-    private fun showLoadingState() {
+    fun showLoadingState() {
         _uiState.value = _uiState.value.copy(loading = true)
     }
 
@@ -52,7 +52,7 @@ class ListMoviesViewModel(
         _uiState.value = _uiState.value.copy(loading = false, searchList = searchData)
     }
 
-    private fun onError() {
+    fun onError() {
         _uiState.value = _uiState.value.copy(loading = false, error = true)
     }
 

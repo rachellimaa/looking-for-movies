@@ -40,6 +40,8 @@ dependencies {
 
     //test libs
     testImplementation(Deps.junit)
+    testImplementation(Deps.mockk)
+    testImplementation(Deps.coroutinesTest)
 
     androidTestImplementation(Deps.espressoCore)
     androidTestImplementation(Deps.extJUnit)

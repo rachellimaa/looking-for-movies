@@ -30,7 +30,7 @@ class FavoritesListViewModel(
         getAllFavoriteList()
     }
 
-    private fun getAllFavoriteList() {
+    fun getAllFavoriteList() {
         showLoadingState()
         viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
             val favoritesList = repositoryFavorites.getFavoritesSaved()
@@ -40,15 +40,15 @@ class FavoritesListViewModel(
         }
     }
 
-    private fun showLoadingState() {
+    fun showLoadingState() {
         _uiState.value = _uiState.value.copy(loading = true)
     }
 
-    private fun onLoadedMoviesWithSuccess(searchData: List<Search>) {
+    fun onLoadedMoviesWithSuccess(searchData: List<Search>) {
         _uiState.value = _uiState.value.copy(loading = false, searchList = searchData)
     }
 
-    private fun onError() {
+    fun onError() {
         _uiState.value = _uiState.value.copy(loading = false, error = true)
     }
 
