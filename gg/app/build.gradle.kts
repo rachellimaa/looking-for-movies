@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
@@ -44,6 +45,7 @@ dependencies {
     implementation(project(Modules.ggCoreNetwork))
     implementation(project(Modules.ggFeatureListMovies))
     implementation(project(Modules.ggCoreRepository))
+    implementation(project(Modules.ggCoreDatabase))
 
     implementation(Deps.kotlinStdLib)
     implementation(Deps.coreKtx)
@@ -55,6 +57,10 @@ dependencies {
     implementation(Deps.navigationRuntimeKtx)
     implementation(Deps.navigationUiKtx)
     implementation(Deps.navigationFragment)
+    implementation(Deps.roomKtx)
+    api(Deps.roomRuntime)
+    annotationProcessor(Deps.roomCompiler)
+    kapt(Deps.roomCompiler)
 
     testImplementation(Deps.junit)
     testImplementation(Deps.koinTest)
